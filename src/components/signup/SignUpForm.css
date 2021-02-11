@@ -1,0 +1,35 @@
+/* Media Queries Break Point*/
+/* Sizes */
+/* Colors */
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px; }
+  .signup-form__header {
+    font-size: 2em; }
+  .signup-form__btn {
+    color: #fff;
+    background-color: #e50914;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 1.3em;
+    border: none; }
+  .signup-form__username {
+    padding: 10px 0; }
+  .signup-form__password {
+    padding: 10px 0; }
+  .signup-form__email {
+    padding: 10px 0; }
+  .signup-form__confirm-password {
+    padding: 10px 0; }
+
+.signup-form-label {
+  font-size: 1.1em; }
+
+.signup-form-input {
+  margin-top: 5px;
+  padding: 10px 10px;
+  width: calc(100% - 25px); }
+
+/*# sourceMappingURL=SignUpForm.css.map */

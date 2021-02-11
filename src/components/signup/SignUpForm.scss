@@ -1,0 +1,13 @@
+
+@import "../../css/authPage.scss";
+
+.signup-form {
+  @include authForm;
+}
+
+.signup-form-label {
+  @include authFormLabel;
+}
+.signup-form-input {
+  @include authFormInput;
+}
