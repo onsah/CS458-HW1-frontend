@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,8BAA8B;AAQ9B,WAAW;AAuBX,YAAY;AC7BZ,YAAa;ECCX,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,gBAAgB,EAAE,uBAAuB;;ADD3C,eAAgB;ECId,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,gBAAgB,EAAE,kBAAkB;EAOpC,OAAO,EAAE,IAAI;EANb,yBAAY;IACV,KAAK,EFuBF,OAAO;IEtBV,+BAAQ;MACN,KAAK,EFkBH,IAAI",
-"sources": ["../css/vars.scss","SignUp.scss","../css/authPage.scss"],
-"names": [],
-"file": "SignUp.css"
-}

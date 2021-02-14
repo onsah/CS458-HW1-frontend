@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonInside = styled.button`
+const ButtonInside = styled.button`
     display: inline-block;
     background: var(--main-red);
     text-transform: uppercase;
@@ -17,7 +17,7 @@ export const ButtonInside = styled.button`
     cursor: pointer;
     &:hover {
         background: #d30913;
-    }
+    };
 `;
 
 export const Button = ({ onClick, children}) => (

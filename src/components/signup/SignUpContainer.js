@@ -1,43 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import logo from '../svg/logo.svg';
-import { Link, NavLink } from 'react-router-dom';
-import { Button } from '../components/Button';
-import CheckmarkLogo from '../images/Checkmark.png';
 
-export class ChoosePlan extends React.Component {
-    
-    render() {
-        return (
-            <MainContainer>
-                <div className="header-top">
-                    <Link to="/">
-                        <Logo src={logo} alt="logo" /> 
-                    </Link>
-                    <NavLink to="/login" className="btn signIn-btn">
-                        Sign In
-                    </NavLink>
-                </div>
-                <div className="header-content">
-                    <img className="checkmark-logo" src={CheckmarkLogo} alt="checkmark"/>
-
-                    <p>Step <strong>1</strong> of <strong>3</strong></p>
-                    <h2>Choose your plan.</h2>
-                    <div className="checked-list">
-                        <div className="bullet">No commitments, cancel anytime.</div>
-                        <div className="bullet">Everything on Netflix for one price.</div>
-                        <div className="bullet">Unlimited viewving on all your devices.</div>
-                    </div>
-                    <Button>
-                        See the plans
-                    </Button>
-                </div>
-            </MainContainer>
-        );
-    }
-} 
-
-const MainContainer = styled.div`
+export const SignUpContainer = styled.div`
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -57,10 +20,10 @@ const MainContainer = styled.div`
         color: var(--main-dark);
         margin-bottom: 6rem;
         width: 65%;
-        height: calc(100vh - 12em);
+        height: calc(100vh - 6em);
         position: relative;
         margin: auto;
-        margin-top: 4.5rem;
+        margin-top: 0;
         text-align: center;
         align-content: center;
         flex-direction: column;
@@ -126,15 +89,4 @@ const MainContainer = styled.div`
 
         }
     }
-`;
-
-// logo
-const Logo = styled.img`
-    width: 10.5rem;
-    height: 3.5rem;
-    position: absolute;
-    top: 49%;
-    left: 8%;
-    transform: translate(-50%, -50%);
-    margin-left: 0;
 `;

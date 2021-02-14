@@ -1,10 +1,12 @@
 import './css/App.css';
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import Main from './pages'
 import Login from './pages/Login';
-import { ChoosePlan } from './pages/ChoosePlan';
-import { SignUp } from './pages/SignUp';
+import { SignUp } from './pages/signup/SignUp';
+import { ChoosePlan } from './pages/signup/ChoosePlan';
+import { ChoosePlan2 } from './pages/signup/ChoosePlan2';
 
 function App() {
   return (
@@ -12,8 +14,9 @@ function App() {
       <Switch>
         <Route exact path = "/" component = {Main}></Route>
         <Route path = "/login" component = {Login}></Route>
-        <Route path = "/sign-up" component = {SignUp}></Route>
-        <Route path = "/choose-plan" component = {ChoosePlan}></Route>
+        <Route path = "/signup/choose-plan-1" component = {ChoosePlan}></Route>
+        <Route path = "/signup/choose-plan-2" component = {ChoosePlan2}></Route>
+        <Route path = "/signup" component = {SignUp}></Route>
       </Switch>
     </div>   
   );
