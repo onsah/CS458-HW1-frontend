@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import FBlogo from '../../images/fb-logo.png';
 import { NavLink, Link } from 'react-router-dom';
 
 const initState = {
@@ -31,36 +30,7 @@ class LoginForm extends Component {
             checked: e.target.checked
         });
     };
-    /* Validation */
-    /*
-    validate = () => {
-        let inputError = false;
-        const errors = {
-            emailError: '',
-            passwordError: '',
-            inputError: false
-        }
-
-       
-       if(!this.state.email) {
-            inputError = true;
-            errors.emailError = "Please enter a valid email."
-        }
-        else if(!this.state.email.match(RegExp)) {
-            inputError = true;
-            errors.emailError = (
-                <span style = {{color: 'red'}}>Your email address must be valid.</span>
-            )
-        }
-        
-
-        if(!this.state.password.length < 4) {
-            inputError = true;
-            errors.passwordError = "Your password must contain at least 4 characters."
-        }
-
-    }
-    */
+   
 
     render() {
         return (
@@ -89,21 +59,22 @@ class LoginForm extends Component {
                             <div className = "input-container">
                               <Button type = "submit">Sign In</Button>
                             </div>
-                            <label className = "checkbox-container">
-                                Remember me
-                                <input type = "checkbox"  defaultChecked = {this.state.checked} onChange = {this.handleCheckbox}/>
-                                <span className = "checkmark"></span>
-                            </label>
+                            
                             <div className = "bottom-form">
-                               <img src = {FBlogo} alt = "facebook" />
-                               <Link to = "/" className = "login-fb-text">
-                                   Login with Facebook
+                              
+                               <Link to = "/" className = "forgot-password">
+                                   Forgot Password?
                                </Link>
                                <br/>
                                <br/>
+                               <br/>
+                               <br/>
+                               <br/>
+                               <br/>
+                               <br/>                               
                                <span style = {{color: '#999'}}>New to Netflix?</span>
                                <br/>
-                               <Link to = "/sign-up" className = "sign-up-text">
+                               <Link to = "/" className = "sign-up-text">
                                    Sign up now
                                 </Link> 
                             </div>
@@ -218,9 +189,10 @@ const FormContainer = styled.div`
         margin: 0.625rem 0.625rem -0.4375rem 0;
     }
 
-    .login-fb-text{
+    .forgot-password{
         color: #828282;
         font-size: 0.9rem;
+        margin-bottom: 4rem;
     }
 
     .bottom-form {
