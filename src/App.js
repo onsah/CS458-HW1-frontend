@@ -5,8 +5,6 @@ import { Switch, Route } from 'react-router-dom';
 import Main from './pages'
 import Login from './pages/Login';
 import { SignUp } from './pages/signup/SignUp';
-import { ChoosePlan } from './pages/signup/ChoosePlan';
-import { ChoosePlan2 } from './pages/signup/ChoosePlan2';
 import { Welcome } from './pages/Welcome';
 
 function App() {

@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 import { signinRequest } from '../../utils/api';
 import { validateEmail } from '../../utils/utils';
+import { loginContext } from '../../contexts/LoginContext';
 
 const initState = {
     email: '',
@@ -85,10 +86,11 @@ class LoginFormImpl extends Component {
 
                 if (respData.token !== undefined) {
                     console.log(`token: ${respData.token}`);
-                    this.props.history.push("/welcome", { token: respData.token });
+                    loginContext.login(respData.token);
+                    this.props.history.push("/welcome");
                 } else {
                     this.setState({
-                        loginError: "Username or password is invalid"
+                        loginError: "Username or password is invalid",
                     });
                     console.warn("TODO: show login error");
                 }
