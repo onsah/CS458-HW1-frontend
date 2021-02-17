@@ -8,6 +8,8 @@ import { HeaderBar } from '../../components/signup/HeaderBar';
 import { InlineError } from '../../components/InlineError/InlineError';
 
 import '../../css/SignUpForm.css';
+import { signupRequest } from '../../utils/api';
+import { validateEmail } from '../../utils/utils';
 
 export class SignUpFormImpl extends React.Component {
 
@@ -45,7 +47,7 @@ export class SignUpFormImpl extends React.Component {
         });
     }
 
-    handleSignUp = e => {
+    handleSignUp = async e => {
         e.preventDefault();
         console.log("handle sign up");
 
@@ -58,7 +60,12 @@ export class SignUpFormImpl extends React.Component {
 
         if (!hasError) {
             console.warn(`TODO: sign up with: ${JSON.stringify(this.state.formFields)}`);
-            this.props.history.push("/signup/choose-plan-1");
+
+            if (await signupRequest(formFields.email, formFields.password)) {
+                this.props.history.push("/login");
+            } else {
+                console.warn("TODO: show signup error");
+            }
         } else {
             console.log(`login error: ${JSON.stringify(this.state.fieldErrors)}`);
         }
@@ -125,7 +132,7 @@ export class SignUpFormImpl extends React.Component {
 
         return (
             <SignUpContainer>
-                <HeaderBar buttonText="Sign In"></HeaderBar>
+                <HeaderBar buttonText="Sign In" onButtonClick={() => { this.props.history.push("/login"); }}></HeaderBar>
                 <div className="signup-container">
                     <p>Step <strong>1</strong> of <strong>3</strong></p>
                     <h2>Create a password to start your membership.</h2>
@@ -171,9 +178,5 @@ export class SignUpFormImpl extends React.Component {
     }
 }
 
-function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
 
 export const SignUpForm = withRouter(SignUpFormImpl);

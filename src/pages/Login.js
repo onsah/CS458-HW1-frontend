@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import LoginForm from '../components/login/LoginForm';
 import logo from '../svg/logo.svg';
 import { Logo } from '../components/Logo';
+
+import { LoginForm } from '../components/login/LoginForm';
 
 class Login extends Component {
     render() {
