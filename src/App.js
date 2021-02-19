@@ -5,9 +5,8 @@ import { Switch, Route } from 'react-router-dom';
 import Main from './pages'
 import Login from './pages/Login';
 import { SignUp } from './pages/signup/SignUp';
-import { ChoosePlan } from './pages/signup/ChoosePlan';
-import { ChoosePlan2 } from './pages/signup/ChoosePlan2';
 import { Welcome } from './pages/Welcome';
+import { ForgotPassword } from './pages/ForgotPassword';
 
 function App() {
   return (
@@ -16,8 +15,9 @@ function App() {
         <Route exact path = "/" component = {Main}></Route>
         <Route path = "/login" component = {Login}></Route>
         <Route path = "/signup" component = {SignUp}></Route>
-        <Route path = "/welcome" component = {Welcome}></Route>
-      </Switch>
+        <Route path = "/welcome" component = {Welcome}></Route> 
+        <Route path = "/forgotpassword" component = {ForgotPassword}></Route>
+      </Switch>      
     </div>   
   );
 }

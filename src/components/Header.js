@@ -21,9 +21,9 @@ class Header extends Component {
                <div className = "header-content">
                    <Title>See what's next.</Title>
                    <h2>WATCH ANYWHERE. CANCEL ANYTIME.</h2>
-                   <div className = "main-offer-btn">try it now
-                   <Icon className = "Icon" icon = {ic_keyboard_arrow_right} size = {37} />
-                   </div>
+                   <NavLink to="/login" className = "main-offer-btn">try it now
+                        <Icon className = "Icon" icon = {ic_keyboard_arrow_right} size = {37} />
+                   </NavLink>
                </div>
            </HeaderComponent>
 

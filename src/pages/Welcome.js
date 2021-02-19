@@ -6,6 +6,7 @@ import { Button } from '../components/Button';
 import CheckmarkLogo from '../images/Checkmark.png';
 import { SignUpContainer } from '../components/signup/SignUpContainer';
 import { HeaderBar } from '../components/signup/HeaderBar';
+import { loginContext } from '../contexts/LoginContext';
 
 export class WelcomeImpl extends React.Component {
 
@@ -18,16 +19,21 @@ export class WelcomeImpl extends React.Component {
 
         console.log(`State; ${JSON.stringify(this.props.location.state)}`);
 
-        if (this.props.location?.state?.token === undefined) {
+        if (!loginContext.isLoggedIn()) {
             console.warn("trying to access welcome page without token");
             this.props.history.replace("/");
         }
+    }
+
+    signoutHandler = () => {
+        loginContext.logout();
+        this.props.history.replace('/');
     }
     
     render() {
         return (
             <SignUpContainer>
-                <HeaderBar buttonText="Sign Out" onButtonClick={ () => { this.props.history.replace('/') } }></HeaderBar>
+                <HeaderBar buttonText="Sign Out" onButtonClick={this.signoutHandler}></HeaderBar>
                 <div className="header-content">
                     <h2>Welcome.</h2>
                 </div>
