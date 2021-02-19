@@ -1,8 +1,7 @@
-// redirect edince tekrar logine donuyor, cookie fln gerekiyor yapmadik.
 const assert = require('assert');
 
 const { Builder, By, Key, until } = require("selenium-webdriver");
-const browsers = ['firefox']
+const browsers = ['chrome', 'firefox']
 const URL = "http://localhost:3000/";
 
 async function login(driver, username, password) {
@@ -38,7 +37,6 @@ async function verifyForgotPassword(browser) {
 
     const clickEmail = async (driver) => {
         const button = await driver.findElement(By.id("forgot-button"));
-        // button.sendKeys("Selenimum", Key.ENTER);
         await button.click();
     };
 
@@ -127,7 +125,7 @@ function sleep(ms) {
 } 
 
 /* run the tests for each browser, it's recommended to run them one by one in order to avoid 8 browser instances oppening at once */
-//browsers.forEach(verifyRedirect);
-//browsers.forEach(verifySignIn)
-//browsers.forEach(verifyForgotPassword)
+browsers.forEach(verifyRedirect);
+browsers.forEach(verifySignIn)
+browsers.forEach(verifyForgotPassword)
 browsers.forEach(verifyKeyboardInterface)
