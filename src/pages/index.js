@@ -21,7 +21,6 @@ class MainImpl extends Component {
     render() {
         return (
             <div>
-                {/* TODO: redirect if logged in */}
                 <Header />
             </div>
         );
