@@ -3,13 +3,16 @@ import logo from '../svg/logo.svg';
 import { Logo } from '../components/Logo';
 
 import { LoginForm } from '../components/login/LoginForm';
+import { NavLink } from 'react-router-dom';
 
 class Login extends Component {
     render() {
         return (
             <div className = "main-login-container">
                 <div className = "header-top">
-                   <Logo src = { logo } alt = "logo" className = "Logo"/>       
+                    <NavLink to="/">
+                        <Logo src = { logo } alt = "logo" className = "Logo"/>       
+                    </NavLink>
                 </div>
                 <LoginForm/>
             </div>
@@ -18,4 +21,3 @@ class Login extends Component {
 }
 
 export default Login;
-

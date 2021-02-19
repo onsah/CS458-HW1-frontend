@@ -34,3 +34,20 @@ export const signinRequest = async (email, password) => {
 
     return respData;
 };
+
+export const emailForgotPasswordRequest = async (email) => {
+    const url = BASE_ENDPOINT + "/auth/forgot";
+
+    const settings = {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+    };
+
+    const resp = await fetch(url, settings);
+
+    return resp.ok;
+};
