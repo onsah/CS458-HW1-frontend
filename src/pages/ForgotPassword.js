@@ -67,7 +67,7 @@ class ForgotPasswordImpl extends Component {
                 console.log(`send email to ${this.state.email}`);
                 this.setState({ emailSent: true });
             } else {
-                this.setState({ emailResponse: "Failed to send, please ensure you entered the email" });
+                this.setState({ emailResponse: "Failed to send, please ensure you entered the correct email" });
             }
         }
     }
@@ -84,12 +84,12 @@ class ForgotPasswordImpl extends Component {
                     <div className="form-container">
                         {this.state.emailSent ? 
                             (
-                                <h1>Email sent. Please check your inbox</h1>
+                                <h1 id="successMessage">Email sent. Please check your inbox</h1>
                             ):
                             (
                                 <form action="">
                                     <h1>Please enter the email</h1>
-                                    {this.state.emailResponse && <InlineError text={this.state.emailResponse} />}
+                                    {this.state.emailResponse && <InlineError id="emailResponse" text={this.state.emailResponse} />}
                                     <div className = "input-container">
                                         <input className = "input-empty" 
                                         type = "email" required
@@ -102,7 +102,7 @@ class ForgotPasswordImpl extends Component {
                                         </label>  
                                     </div>
                                     <div className="bottom-form">
-                                        <Button onClick={this.handleSendMail}>
+                                        <Button onClick={this.handleSendMail} id="forgot-button">
                                             Send Email
                                         </Button>
                                     </div>
@@ -116,4 +116,4 @@ class ForgotPasswordImpl extends Component {
     }
 }
 
-export const ForgotPassword = withRouter(ForgotPasswordImpl);
+export const ForgotPassword = withRouter(ForgotPasswordImpl)

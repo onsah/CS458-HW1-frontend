@@ -20,8 +20,8 @@ const ButtonInside = styled.button`
     };
 `;
 
-export const Button = ({ onClick, children}) => (
-    <div onClick = {onClick}>
+export const Button = ({ onClick, children, id }) => (
+    <div onClick = {onClick} id={id}>
         <ButtonInside>
             { children }
         </ButtonInside>

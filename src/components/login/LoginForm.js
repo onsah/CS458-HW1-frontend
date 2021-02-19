@@ -115,9 +115,11 @@ class LoginFormImpl extends Component {
                         {this.state.loginError && <InlineError text={this.state.loginError} />}
                         <div className = "input-container">
                             <input className = "input-empty" 
-                            type = "email" required
-                            name ="email"
-                            onChange = {this.handleEmailChange}/>
+                                type = "email" required
+                                name ="email"
+                                onChange = {this.handleEmailChange}
+                                id="login-email"
+                            />
                             {this.state.fieldErrors.email && <InlineError text={this.state.fieldErrors.email} />}
                             <label>
                                 Email or Phone Number
@@ -125,9 +127,11 @@ class LoginFormImpl extends Component {
                         </div>
                         <div className = "input-container">
                             <input className = "input-empty" 
-                            type = "password" required
-                            name ="password"
-                            onChange = {this.handlePasswordChange}/>
+                                type = "password" required
+                                name ="password"
+                                onChange = {this.handlePasswordChange}
+                                id="login-email"
+                            />
                             <label>
                                 Password
                             </label>

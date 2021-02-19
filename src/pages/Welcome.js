@@ -35,7 +35,7 @@ export class WelcomeImpl extends React.Component {
             <SignUpContainer>
                 <HeaderBar buttonText="Sign Out" onButtonClick={this.signoutHandler}></HeaderBar>
                 <div className="header-content">
-                    <h2>Welcome.</h2>
+                    <h2 id="welcome-header">Welcome.</h2>
                 </div>
             </SignUpContainer> 
         );

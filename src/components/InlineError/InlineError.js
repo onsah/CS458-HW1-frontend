@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 
 import "../../css/InlineError.css";
 
-export const InlineError = ({ text }) => (
-  <span className="inline-error-span">
+export const InlineError = ({ text, id }) => (
+  <span className="inline-error-span" id={id}>
     {"  "}
     {text}!
   </span>
