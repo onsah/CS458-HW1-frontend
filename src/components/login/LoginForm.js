@@ -113,6 +113,7 @@ class LoginFormImpl extends Component {
                         <div className = "input-container">
                             <input className = "input-empty" 
                             type = "email" required
+                            name ="email"
                             onChange = {this.handleEmailChange}/>
                             {this.state.fieldErrors.email && <InlineError text={this.state.fieldErrors.email} />}
                             <label>
@@ -122,6 +123,7 @@ class LoginFormImpl extends Component {
                         <div className = "input-container">
                             <input className = "input-empty" 
                             type = "password" required
+                            name ="password"
                             onChange = {this.handlePasswordChange}/>
                             <label>
                                 Password
